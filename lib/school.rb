@@ -3,28 +3,28 @@ class School
 
   def initialize(name)
     @name = name
-    @@roster = {}
+    @roster = {}
   end
 
   def roster
-    @@roster
+    @roster
   end
 
   def add_student(name, grade)
-    if @@roster.keys.include?(grade)
-      @@roster[grade] << name
+    if @roster.keys.include?(grade)
+      @roster[grade] << name
     else
-      @@roster[grade] = [name]
+      @roster[grade] = [name]
     end
   end
 
   def grade(g)
-    @@roster[g]
+    @roster[g]
   end
 
   def sort
-    @@roster.each do |grade, array|
-      @@roster[grade] = array.sort
+    @roster.each do |grade, array|
+      @roster[grade] = array.sort
     end
   end
 
